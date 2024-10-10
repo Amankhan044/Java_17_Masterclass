@@ -1,3 +1,4 @@
+package ControlFlow;
 
 public class TraditionalSwitchChallenege {
     public static void switchStatement(char nato) {

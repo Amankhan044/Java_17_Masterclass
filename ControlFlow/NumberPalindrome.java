@@ -1,3 +1,5 @@
+package ControlFlow;
+
 public class NumberPalindrome {
     // write code here
     public static boolean isPalindrome(int number) {
