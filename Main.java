@@ -2,13 +2,26 @@
 import ControlFlow.*;
 import OopInheritance.*;
 import OopInheritance.InheritanceChallenge.*;
+import Polymorphism.CompositionChallenge02.*;
+import Polymorphism.CompositionChallenge02.Wall;
 
 @SuppressWarnings("unused")
 public class Main {
     public static void main(String[] args) {
-        HourlyEmployee tim = new HourlyEmployee("Tim", "11/11/1995", 0, "11/11/2024", 15);
-        System.out.println(tim);
-        System.out.println("Age = " + tim.getAge());
-        System.out.println("Pay = " + tim.collectPay());
+        Wall wall1 = new Wall("West");
+        Wall wall2 = new Wall("East");
+        Wall wall3 = new Wall("South");
+        Wall wall4 = new Wall("North");
+
+        Ceiling ceiling = new Ceiling(12, 55);
+
+        Bed bed = new Bed("Modern", 4, 3, 2, 1);
+
+        Lamp lamp = new Lamp("Classic", false, 75);
+
+        Bedroom bedRoom = new Bedroom("YOUR NAME HERE", wall1, wall2, wall3, wall4, ceiling, bed, lamp);
+        bedRoom.makeBed();
+
+        bedRoom.getLamp().turnOn();
     }
 }
