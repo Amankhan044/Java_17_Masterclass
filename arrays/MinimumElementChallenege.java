@@ -1,42 +1,35 @@
 package arrays;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class MinimumElementChallenege {
 
-    public static int[] readIntegers() {
-        System.out.print("Entering minimum element you want in the List of elements by comma delimited: -> ");
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String[] elements = input.split(",");
-        int[] elementsCount = new int[elements.length];
-        for (int i = 0; i < elementsCount.length; i++) {
-            elementsCount[i] = Integer.parseInt(elements[i].trim());
-        }
-        scanner.close();
-        return elementsCount;
+    private static Scanner scanner = new Scanner(System.in);
 
+    public static int readIntegers() {
+        System.out.print("Enter the minimum number of elements you want in the list: ");
+        int integer = scanner.nextInt();
+        return integer;
     }
 
-    public static void findMin(int[] arr) {
-        int temp;
-        boolean flag = true;
-        while (flag) {
-            int count = 0;
-            flag = false;
-            for (int i = 0; i < arr.length - 1; i++) {
-                if (arr[i] < arr[i + 1]) {
-                    temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
-                    count++;
-                    System.out.println(count);
-                    flag = true;
-                }
+    public static int[] readElement(int integer) {
+        int[] elements = new int[integer];
+        System.out.println("Enter " + integer + " integers:");
+        for (int i = 0; i < integer; i++) {
+            elements[i] = scanner.nextInt();
+        }
+        return elements;
+    }
+
+    public static int findMin(int[] arr) {
+        int min = Integer.MAX_VALUE;
+        for (int i : arr) {
+            if (i < min) {
+                min = i;
             }
         }
-        System.out.println(Arrays.toString(arr));
-
+        System.out.println(min);
+        return min;
     }
+
 }
