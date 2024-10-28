@@ -9,13 +9,16 @@ public class ArraysChallenge {
         Random rand = new Random();
         int[] array = new int[len];
         for (int i = 0; i < len; i++) {
-            array[1] = rand.nextInt(100);
+            array[i] = rand.nextInt(100);
         }
         Arrays.sort(array);
         int[] desendedArray = new int[len];
+        System.out.println(Arrays.toString(desendedArray));
         for (int i = 0; i < len; i++) {
-            desendedArray[i] = array[len - i];
+            desendedArray[i] = array[len - 1 - i];
+            System.out.println(len - 1 - i);
         }
-        return desendedArray;
+        System.out.println(Arrays.toString(desendedArray));
+        return array;
     }
 }
