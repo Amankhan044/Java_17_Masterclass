@@ -1,10 +1,9 @@
-import arrays.*;
+import linkedlist.LinkedListChallenge;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayListChallenge arrayListChallenege = new ArrayListChallenge();
-        arrayListChallenege.arrayList();
-
+        LinkedListChallenge linkedListChallenege = new LinkedListChallenge();
+        linkedListChallenege.linkedlist();
     }
 
 }
